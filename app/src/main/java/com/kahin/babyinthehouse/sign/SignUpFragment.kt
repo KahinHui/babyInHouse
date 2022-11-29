@@ -31,7 +31,6 @@ class SignUpFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentSignupBinding.inflate(inflater, container, false)
         return binding.root
     }
