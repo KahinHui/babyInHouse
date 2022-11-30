@@ -41,7 +41,7 @@ class HomeFragment : Fragment() {
 
         val adapter = HomeRvAdapter(
             arrayOf("aa", "dd", "das", "dsds", "dsdsds", "dsds", "dsds", "fsfs", "fsdfsf", "dsds"),
-            arrayOf(R.drawable.aa, R.drawable.aa, R.drawable.aa, R.drawable.aa, R.drawable.aa, R.drawable.aa, R.drawable.aa, R.drawable.aa, R.drawable.aa, R.drawable.aa)
+            arrayOf(R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e, R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.i, R.drawable.j)
         )
 
         val  rv: RecyclerView = binding.recyclerView
