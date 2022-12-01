@@ -29,5 +29,14 @@
         android:id="@+id/homeFragment"
         android:name="com.kahin.babyinthehouse.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_meFragment"
+            app:destination="@id/meFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/meFragment"
+        android:name="com.kahin.babyinthehouse.me.MeFragment"
+        android:label="fragment_me"
+        tools:layout="@layout/fragment_me" />
 </navigation>

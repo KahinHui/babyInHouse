@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.kahin.babyinthehouse.R
 import com.kahin.babyinthehouse.databinding.FragmentHomeBinding
@@ -40,12 +41,15 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val adapter = HomeRvAdapter(
-            arrayOf("aa", "dd", "das", "dsds", "dsdsds", "dsds", "dsds", "fsfs", "fsdfsf", "dsds"),
+            arrayOf("aa", "dd", "das", "dsds", "dsdsds", "dsds", "dsds", "fsfs", "fsdfsf", "dsdfs"),
             arrayOf(R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e, R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.i, R.drawable.j)
         )
 
         val  rv: RecyclerView = binding.recyclerView
         rv.adapter = adapter
-    }
 
+        binding.tvBottomMe.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_meFragment)
+        }
+    }
 }

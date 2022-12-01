@@ -25,11 +25,11 @@
         app:layoutManager="LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
-        app:layout_constraintBottom_toTopOf="@id/tv_bottom"/>
+        app:layout_constraintBottom_toTopOf="@id/tv_bottom_home"/>
 
     <TextView
-        android:id="@+id/tv_bottom"
-        android:layout_width="match_parent"
+        android:id="@+id/tv_bottom_home"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:text="Home"
         android:textSize="30dp"
@@ -37,6 +37,21 @@
         android:gravity="center"
         android:background="@color/teal_200"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_bottom_me"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_bottom_me"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="Me"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:background="@color/teal_200"
+        app:layout_constraintStart_toEndOf="@id/tv_bottom_home"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
