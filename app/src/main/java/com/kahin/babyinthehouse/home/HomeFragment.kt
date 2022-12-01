@@ -6,13 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.kahin.babyinthehouse.R
+import com.kahin.babyinthehouse.base.BaseFragment
 import com.kahin.babyinthehouse.databinding.FragmentHomeBinding
 import com.kahin.babyinthehouse.databinding.FragmentSignupBinding
 
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment() {
 
     companion object {
         fun newInstance() = HomeFragment()
@@ -51,5 +53,9 @@ class HomeFragment : Fragment() {
         binding.tvBottomMe.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_meFragment)
         }
+    }
+
+    override fun onBack() {
+        findNavController().popBackStack(R.id.loginFragment, true)
     }
 }

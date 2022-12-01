@@ -14,9 +14,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import com.kahin.babyinthehouse.R
+import com.kahin.babyinthehouse.base.BaseFragment
 import com.kahin.babyinthehouse.databinding.FragmentSignupBinding
 
-class SignUpFragment : Fragment() {
+class SignUpFragment : BaseFragment() {
 
     companion object {
         fun newInstance() = SignUpFragment()
@@ -108,6 +109,10 @@ class SignUpFragment : Fragment() {
                 password = passwordEt.text.toString(),
                 username = usernameEt.text.toString())
         }
+    }
+
+    override fun onBack() {
+        findNavController().navigateUp()
     }
 
     private fun showSignUpFailed(errorString: String) {

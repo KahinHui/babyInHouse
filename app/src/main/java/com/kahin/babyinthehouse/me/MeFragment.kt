@@ -6,15 +6,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.kahin.babyinthehouse.R
+import com.kahin.babyinthehouse.base.BaseFragment
 
-class MeFragment : Fragment() {
+class MeFragment : BaseFragment() {
 
     companion object {
         fun newInstance() = MeFragment()
     }
 
     private lateinit var viewModel: MeViewModel
+
+    override fun onBack() {
+        findNavController().navigateUp()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
