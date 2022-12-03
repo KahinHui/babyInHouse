@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-kapt'
 }
 
@@ -8,7 +9,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.kahin.babyinthehouse"
+        applicationId "com.kahin.petinthehouse"
         minSdk 21
         targetSdk 33
         versionCode 1

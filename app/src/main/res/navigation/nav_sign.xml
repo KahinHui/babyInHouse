@@ -6,7 +6,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.kahin.babyinthehouse.sign.ui.login.LoginFragment"
+        android:name="com.kahin.petinthehouse.sign.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -15,10 +15,14 @@
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue=" " />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.kahin.babyinthehouse.sign.SignUpFragment"
+        android:name="com.kahin.petinthehouse.sign.SignUpFragment"
         android:label="fragment_signup"
         tools:layout="@layout/fragment_signup" >
         <action
@@ -27,16 +31,25 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.kahin.babyinthehouse.home.HomeFragment"
+        android:name="com.kahin.petinthehouse.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_meFragment"
             app:destination="@id/meFragment" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue=" " />
     </fragment>
     <fragment
         android:id="@+id/meFragment"
-        android:name="com.kahin.babyinthehouse.me.MeFragment"
+        android:name="com.kahin.petinthehouse.me.MeFragment"
         android:label="fragment_me"
-        tools:layout="@layout/fragment_me" />
+        tools:layout="@layout/fragment_me" >
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue=" " />
+    </fragment>
 </navigation>
