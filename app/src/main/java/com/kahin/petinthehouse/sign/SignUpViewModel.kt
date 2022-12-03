@@ -9,7 +9,6 @@ import com.kahin.petinthehouse.persistence.db.dao.UserDao
 import com.kahin.petinthehouse.sign.data.Result
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.io.IOException
 import java.util.*
 
 class SignUpViewModel(private val repository: SignUpRepository) : ViewModel() {
@@ -28,7 +27,6 @@ class SignUpViewModel(private val repository: SignUpRepository) : ViewModel() {
                 when (result) {
                     is Result.Success -> _signUpResult.value = EventData(SignUpResult(success = SignedUpUserView(displayName = result.data.userName)))
                     is Result.Error -> _signUpResult.value = EventData(SignUpResult(error = result.msg))
-                    else -> {}
                 }
             }
         }
@@ -65,7 +63,7 @@ class SignUpViewModel(private val repository: SignUpRepository) : ViewModel() {
     }
 }
 
-class SignUpRepository(val dataSource: SignUpDataSource, val userDao: UserDao) {
+class SignUpRepository(val userDao: UserDao) {
 
     var user: User? = null
         private set
@@ -102,22 +100,5 @@ class SignUpRepository(val dataSource: SignUpDataSource, val userDao: UserDao) {
 
     private fun setSignedInUser(user: User) {
         this.user = user
-    }
-}
-
-class SignUpDataSource {
-
-    fun signUp(
-        email: String,
-        password: String,
-        username: String
-    ): Result<User> {
-        return try {
-            val user = User(UUID.randomUUID().toString(), email, password, username)
-
-            Result.Success(user)
-        } catch (e: Throwable) {
-            Result.Error("Error signing up", IOException("Error signing up", e))
-        }
     }
 }

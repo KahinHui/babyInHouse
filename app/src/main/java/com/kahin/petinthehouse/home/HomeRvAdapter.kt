@@ -12,7 +12,7 @@ import com.kahin.petinthehouse.R
 class HomeRvAdapter(private val dataSet: Array<String>, private val img: Array<Int>) :
     RecyclerView.Adapter<HomeRvAdapter.ViewHolder>() {
 
-    val clicked = mutableListOf<Int>()
+    private val clicked = mutableListOf<Int>()
 
     /**
      * Provide a reference to the type of views that you are using

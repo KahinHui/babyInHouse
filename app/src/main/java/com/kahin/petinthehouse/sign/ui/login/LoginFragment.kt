@@ -28,8 +28,8 @@ class LoginFragment : BaseFragment() {
 
     lateinit var usernameEditText: EditText
     lateinit var passwordEditText: EditText
-    lateinit var loginButton: Button
-    lateinit var loadingProgressBar: ProgressBar
+    private lateinit var loginButton: Button
+    private lateinit var loadingProgressBar: ProgressBar
 
     override fun onCreateView(
         inflater: LayoutInflater,

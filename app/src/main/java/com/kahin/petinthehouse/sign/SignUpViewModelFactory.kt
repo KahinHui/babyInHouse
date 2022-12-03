@@ -15,7 +15,6 @@ class SignUpViewModelFactory : ViewModelProvider.Factory {
         if (modelClass.isAssignableFrom(SignUpViewModel::class.java)) {
             return SignUpViewModel(
                 repository = SignUpRepository(
-                    dataSource = SignUpDataSource(),
                     userDao = App.appDb.userDao()
                 )
             ) as T

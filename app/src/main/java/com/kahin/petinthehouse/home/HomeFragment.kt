@@ -14,11 +14,7 @@ import com.kahin.petinthehouse.base.BaseFragment
 
 class HomeFragment : BaseFragment() {
 
-    companion object {
-        fun newInstance() = HomeFragment()
-    }
-
-    val args: HomeFragmentArgs by navArgs()
+    private val args: HomeFragmentArgs by navArgs()
 
     private lateinit var viewModel: HomeViewModel
     private var _binding: FragmentHomeBinding? = null
@@ -33,9 +29,10 @@ class HomeFragment : BaseFragment() {
         return binding.root
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         // TODO: Use the ViewModel
     }
 
@@ -43,7 +40,7 @@ class HomeFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val adapter = HomeRvAdapter(
-            arrayOf("aa", "dd", "das", "dsds", "dsdsds", "dsds", "dsds", "fsfs", "fsdfsf", "dsdfs"),
+            arrayOf("Amy", "Holly", "Joy", "Bear", "Muffy", "Max", "Kiwi", "Coco", "Leo", "Simon"),
             arrayOf(R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d, R.drawable.e, R.drawable.f, R.drawable.g, R.drawable.h, R.drawable.i, R.drawable.j)
         )
 

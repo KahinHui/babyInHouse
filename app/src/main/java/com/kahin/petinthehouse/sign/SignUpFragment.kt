@@ -15,10 +15,6 @@ import com.kahin.petinthehouse.databinding.FragmentSignupBinding
 
 class SignUpFragment : BaseFragment() {
 
-    companion object {
-        fun newInstance() = SignUpFragment()
-    }
-
     private lateinit var viewModel: SignUpViewModel
     private var _binding: FragmentSignupBinding? = null
 

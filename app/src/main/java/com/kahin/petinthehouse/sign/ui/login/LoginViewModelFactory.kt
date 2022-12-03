@@ -3,7 +3,6 @@ package com.kahin.petinthehouse.sign.ui.login
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.kahin.petinthehouse.App
-import com.kahin.petinthehouse.sign.data.LoginDataSource
 import com.kahin.petinthehouse.sign.data.LoginRepository
 
 /**
@@ -17,7 +16,6 @@ class LoginViewModelFactory : ViewModelProvider.Factory {
         if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
             return LoginViewModel(
                 loginRepository = LoginRepository(
-                    dataSource = LoginDataSource(),
                     userDao = App.appDb.userDao()
                 )
             ) as T

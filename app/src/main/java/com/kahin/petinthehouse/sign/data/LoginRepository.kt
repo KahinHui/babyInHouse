@@ -8,14 +8,11 @@ import com.kahin.petinthehouse.persistence.db.dao.UserDao
  * maintains an in-memory cache of login status and user credentials information.
  */
 
-class LoginRepository(val dataSource: LoginDataSource, val userDao: UserDao) {
+class LoginRepository(val userDao: UserDao) {
 
     // in-memory cache of the loggedInUser object
     var user: User? = null
         private set
-
-    val isLoggedIn: Boolean
-        get() = user != null
 
     init {
         // If user credentials will be cached in local storage, it is recommended it be encrypted
@@ -23,14 +20,7 @@ class LoginRepository(val dataSource: LoginDataSource, val userDao: UserDao) {
         user = null
     }
 
-    fun logout() {
-        user = null
-        dataSource.logout()
-    }
-
     fun login(email: String, password: String): Result<User> {
-        // handle login
-//        val result = dataSource.login(username, password)
         val dbUser = userDao.findByEmail(email)
         val result = if (dbUser != null) {
             if (dbUser.email == email && dbUser.password == password) {

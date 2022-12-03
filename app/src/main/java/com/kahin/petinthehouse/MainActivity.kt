@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting(this, "Android")
+                    Greeting(this)
                 }
             }
         }
@@ -41,7 +41,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(context: Context?, name: String) {
+fun Greeting(context: Context?) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Top
@@ -72,6 +72,6 @@ fun Greeting(context: Context?, name: String) {
 @Composable
 fun DefaultPreview() {
     HomeTheme {
-        Greeting(null, "Android")
+        Greeting(null)
     }
 }
